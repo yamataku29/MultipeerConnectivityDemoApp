@@ -89,6 +89,7 @@ private extension ViewController {
     
     @objc func submitButtonAction(sender: UIButton) {
         outputLog(with: "submitButtonAction")
+        defer { inputTextField.text = nil }
         guard let text = inputTextField.text,
               let data = text.data else { return }
         do {
