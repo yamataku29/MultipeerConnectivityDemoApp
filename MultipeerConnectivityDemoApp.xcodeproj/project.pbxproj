@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1571F2264A5899007F555A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1571F1264A5899007F555A /* String+Extension.swift */; };
+		3B1571F4264A58C8007F555A /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1571F3264A58C8007F555A /* Data+Extension.swift */; };
 		3BD0F64A264A18520029C269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0F649264A18520029C269 /* AppDelegate.swift */; };
 		3BD0F64C264A18520029C269 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0F64B264A18520029C269 /* SceneDelegate.swift */; };
 		3BD0F64E264A18520029C269 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0F64D264A18520029C269 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B1571F1264A5899007F555A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3B1571F3264A58C8007F555A /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		3BD0F646264A18520029C269 /* MultipeerConnectivityDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultipeerConnectivityDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD0F649264A18520029C269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD0F64B264A18520029C269 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,9 +64,11 @@
 				3BD0F64B264A18520029C269 /* SceneDelegate.swift */,
 				3BD0F64D264A18520029C269 /* ViewController.swift */,
 				3BD0F64F264A18520029C269 /* Main.storyboard */,
+				3B1571F1264A5899007F555A /* String+Extension.swift */,
 				3BD0F652264A18520029C269 /* Assets.xcassets */,
 				3BD0F654264A18520029C269 /* LaunchScreen.storyboard */,
 				3BD0F657264A18520029C269 /* Info.plist */,
+				3B1571F3264A58C8007F555A /* Data+Extension.swift */,
 			);
 			path = MultipeerConnectivityDemoApp;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1571F2264A5899007F555A /* String+Extension.swift in Sources */,
 				3BD0F64E264A18520029C269 /* ViewController.swift in Sources */,
+				3B1571F4264A58C8007F555A /* Data+Extension.swift in Sources */,
 				3BD0F64A264A18520029C269 /* AppDelegate.swift in Sources */,
 				3BD0F64C264A18520029C269 /* SceneDelegate.swift in Sources */,
 			);
