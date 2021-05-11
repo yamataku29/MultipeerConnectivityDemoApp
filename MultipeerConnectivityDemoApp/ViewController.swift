@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var submitButton: UIButton!
     @IBOutlet private weak var logTextView: UITextView!
     
-    private let serviceName = "MultipeerConnectivityDemoApp"
+    private let serviceName = "p2p-test"
     private var peerId: MCPeerID!
     private var session: MCSession!
     private var advertiser: MCNearbyServiceAdvertiser!
