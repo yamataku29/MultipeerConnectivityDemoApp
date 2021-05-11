@@ -54,6 +54,8 @@ private extension ViewController {
             action: #selector(advertisionSwitchAction(sender:)),
             for: .touchUpInside
         )
+        searchSwitch.isOn = false
+        advertisionSwitch.isOn = false
         submitButton.addTarget(
             self,
             action: #selector(submitButtonAction(sender:)),
