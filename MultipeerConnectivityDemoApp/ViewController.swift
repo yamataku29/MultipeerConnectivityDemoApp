@@ -59,6 +59,11 @@ private extension ViewController {
             action: #selector(submitButtonAction(sender:)),
             for: .touchUpInside
         )
+        let viewTapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(tapped(_:))
+        )
+        view.addGestureRecognizer(viewTapGesture)
     }
     
     func outputLog(with text: String) {
@@ -89,6 +94,10 @@ private extension ViewController {
         } catch {
             outputLog(with: "Failure send text")
         }
+    }
+    
+    @objc func tapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
 
