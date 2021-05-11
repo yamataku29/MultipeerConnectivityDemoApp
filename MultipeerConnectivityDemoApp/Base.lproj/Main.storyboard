@@ -164,6 +164,13 @@
                             <constraint firstItem="f3I-R9-dx3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vKF-1G-nGR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectionSwitch" destination="lVs-CE-ML7" id="nWd-Wd-5IN"/>
+                        <outlet property="inputTextField" destination="h8i-0G-VSN" id="bSj-dk-Gw7"/>
+                        <outlet property="logTextView" destination="iYE-Af-NBA" id="7m0-5J-HXf"/>
+                        <outlet property="statusLabel" destination="yy7-2h-QpD" id="UBR-pC-2nb"/>
+                        <outlet property="submitButton" destination="6bL-dt-fYf" id="cUh-Sk-i5s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
