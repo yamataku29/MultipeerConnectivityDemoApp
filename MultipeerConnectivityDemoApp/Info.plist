@@ -64,5 +64,12 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>このアプリではローカルネットワークを利用した近距離デバイス間のデータ通信を行います。</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_p2ptest._tcp</string>
+		<string>_p2ptest._udp</string>
+	</array>
 </dict>
 </plist>
