@@ -105,6 +105,14 @@ private extension ViewController {
     @objc func tapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
+    func showAlert(with message: String) {
+        let title = "Date received!"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ViewController: MCSessionDelegate {
@@ -127,7 +135,11 @@ extension ViewController: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        outputLog(with: "didReceive data: \(data.string ?? "none")")
+        let receiveText = data.string ?? "none"
+        outputLog(with: "didReceive data: \(receiveText)")
+        DispatchQueue.main.async {
+            self.showAlert(with: receiveText)
+        }
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
