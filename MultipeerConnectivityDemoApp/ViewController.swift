@@ -66,6 +66,7 @@ private extension ViewController {
             action: #selector(tapped(_:))
         )
         view.addGestureRecognizer(viewTapGesture)
+        inputTextField.delegate = self
     }
     
     func outputLog(with text: String) {
@@ -157,5 +158,12 @@ extension ViewController: MCNearbyServiceBrowserDelegate {
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         outputLog(with: "lostPeer peerID: \(peerID)")
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
