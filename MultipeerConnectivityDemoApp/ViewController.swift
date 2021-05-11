@@ -126,7 +126,7 @@ extension ViewController: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        outputLog(with: "didReceive data")
+        outputLog(with: "didReceive data: \(data.string ?? "none")")
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
