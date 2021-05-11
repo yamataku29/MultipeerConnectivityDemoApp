@@ -69,8 +69,10 @@ private extension ViewController {
     }
     
     func outputLog(with text: String) {
-        let logText = logTextView.text ?? ""
-        logTextView.text = logText + "\n" + text
+        DispatchQueue.main.async {
+            let logText = self.logTextView.text ?? ""
+            self.logTextView.text = logText + "\n" + text
+        }
     }
     
     @objc func searchSwitchAction(sender: UISwitch) {
@@ -106,18 +108,20 @@ private extension ViewController {
 
 extension ViewController: MCSessionDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        switch state {
-        case MCSessionState.connected:
-            statusLabel.text = "Connected"
-            outputLog(with: "Connected: \(peerID.displayName)")
-        case MCSessionState.connecting:
-            statusLabel.text = "Connecting"
-            outputLog(with: "Connecting: \(peerID.displayName)")
-        case MCSessionState.notConnected:
-            statusLabel.text = "notConnected"
-            outputLog(with: "notConnected: \(peerID.displayName)")
-        @unknown default:
-            fatalError()
+        DispatchQueue.main.async {
+            switch state {
+            case MCSessionState.connected:
+                self.statusLabel.text = "Connected"
+                self.outputLog(with: "Connected: \(peerID.displayName)")
+            case MCSessionState.connecting:
+                self.statusLabel.text = "Connecting"
+                self.outputLog(with: "Connecting: \(peerID.displayName)")
+            case MCSessionState.notConnected:
+                self.statusLabel.text = "notConnected"
+                self.outputLog(with: "notConnected: \(peerID.displayName)")
+            @unknown default:
+                fatalError()
+            }
         }
     }
     
