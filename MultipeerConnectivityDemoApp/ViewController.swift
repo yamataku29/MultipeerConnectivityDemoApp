@@ -9,8 +9,7 @@ import UIKit
 import MultipeerConnectivity
 
 class ViewController: UIViewController {
-    @IBOutlet private weak var searchSwitch: UISwitch!
-    @IBOutlet private weak var advertisionSwitch: UISwitch!
+    @IBOutlet private weak var connectingSwitch: UISwitch!
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var inputTextField: UITextField!
     @IBOutlet private weak var submitButton: UIButton!
@@ -44,18 +43,12 @@ private extension ViewController {
             serviceType: serviceName
         )
         browser.delegate = self
-        searchSwitch.addTarget(
+        connectingSwitch.addTarget(
             self,
-            action: #selector(searchSwitchAction(sender:)),
+            action: #selector(connectingSwitchAction(sender:)),
             for: .touchUpInside
         )
-        advertisionSwitch.addTarget(
-            self,
-            action: #selector(advertisionSwitchAction(sender:)),
-            for: .touchUpInside
-        )
-        searchSwitch.isOn = false
-        advertisionSwitch.isOn = false
+        connectingSwitch.isOn = false
         submitButton.addTarget(
             self,
             action: #selector(submitButtonAction(sender:)),
@@ -76,18 +69,15 @@ private extension ViewController {
         }
     }
     
-    @objc func searchSwitchAction(sender: UISwitch) {
+    @objc func connectingSwitchAction(sender: UISwitch) {
         outputLog(with: "searchSwitchAction isOn: \(sender.isOn)")
-        sender.isOn ?
-            browser.startBrowsingForPeers() :
-            browser.stopBrowsingForPeers()
-    }
-    
-    @objc func advertisionSwitchAction(sender: UISwitch) {
-        outputLog(with: "advertisionSwitchAction isOn: \(sender.isOn)")
-        sender.isOn ?
-            advertiser.startAdvertisingPeer() :
+        if sender.isOn {
+            advertiser.startAdvertisingPeer()
+            browser.startBrowsingForPeers()
+        } else {
             advertiser.stopAdvertisingPeer()
+            browser.stopBrowsingForPeers()
+        }
     }
     
     @objc func submitButtonAction(sender: UIButton) {
